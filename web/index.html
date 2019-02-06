@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IBB Assignment 3 keystroke recording form</title>
+  <script src="./form.js"></script>
+  <script src="./keycode_map.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+
+  <section class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Keystroke recording input
+        </h1>
+        <h2 class="subtitle">
+          Choose whether you are registering a pattern or trying to compare to the registered pattern and start typing
+          the text.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="field">
+        <label class="label">Choose distance metric:</label>
+      </div>
+      <div class="select">
+        <select id="distance">
+          <option value="euclidean" selected>Euclidean</option>
+          <option value="scaledmanhattan">Scaled manhattan</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="field">
+        <label class="label">Choose mode:</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="mode" value="0" checked>
+            Registering pattern
+          </label>
+          <label class="radio">
+            <input id="comparison-radio" type="radio" name="mode" value="1">
+            Comparing to previously registered pattern
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content">
+      <p class="subtitle">Password to write in the input:</p>
+      <span id="wordDisplay" class="tag is-light is-medium">loading ...</span>
+    </div>
+    <div class="container content">
+      <p class="subtitle">Remaining repetitions needed:</p>
+      <span id="remainingRepetitions" class="tag is-light is-medium">loading ...</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="field">
+        <label class="label">Start typing text from above here ...</label>
+        <div class="control">
+          <input id="wordInput" class="input" type="text" placeholder="Text input">
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
